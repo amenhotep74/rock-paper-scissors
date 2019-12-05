@@ -1,39 +1,38 @@
 // declaring variables for global use 
 // var computerChoice;
 // var computerSelection;
+// const rock = 0;
+// const paper = 1;
+// const scissors = 2;
+
 
 // Function to generate a random number for the computer
 function computerPlay() {
-    computerSelection = Math.floor(Math.random() * 3);
+    var computerSelection = Math.floor(Math.random() * 3);
     
     if(computerSelection === 0){
         console.log("Computer: rock!");
-        var computerChoice = "rock";
-        return computerChoice;
-        
+        return "rock";
     }
     else if(computerSelection === 1){
         console.log("Computer: paper!");
-        var computerChoice = "paper";
-        return computerChoice;
+        return "paper";
     }
     else if(computerSelection === 2){
         console.log("Computer: scissors!");
-        var computerChoice = "scissors";
-        return computerChoice;
+        return "scissors";
     } else {
         console.log("Invalid Computer Choice");
     }
 }
 
-function playRound(playerChoice, computerChoice) {
-    // Get user to enter a number
-    var playerChoice = prompt("Enter in rock, paper or scissors", "...");
-    // convert user string into lower case
-    playerChoice = playerChoice.toLowerCase();
-    
-    console.log(computerChoice);
-    console.log(playerChoice);
+function playRound() {
+    const computerChoice = computerPlay();
+    let playerChoice = prompt("rock, paper, scissors?");
+
+    var roundCount = 0;
+    var playerScore = 0;
+    var computerScore = 0;
     // if playerNumber and computer Num is same 
     if (playerChoice === computerChoice){
         console.log("Tie");
@@ -42,34 +41,52 @@ function playRound(playerChoice, computerChoice) {
     else if (playerChoice === "rock" && computerChoice === "scissors"){
         console.log("Player Rock / Computer Paper");
         console.log("You lose!");
+        computerScore += 1;
+        console.log("Computerscore" + computerScore);
+        roundCount += 1;
     }
     // Player Paper / Computer Rock 
     else if (playerChoice === "paper" && computerChoice === "rock"){
         console.log("Player Paper / Computer Rock");
         console.log("You Win!");
+        playerScore += 1;
+        console.log("Playerscore" + playerScore);
+        roundCount += 1;
     }
     // Player Paper / Computer Scissors
     else if (playerChoice === "paper" && computerChoice === "scissors"){
         console.log("Player Paper / Computer Scissors");
         console.log("You Lose!");
+        computerScore += 1;
+        console.log("Computerscore" + computerScore);
+        roundCount += 1;
+
     }
     // Player Scissors / Computer Paper
     else if (playerChoice === "scissors" && computerChoice === "paper"){
         console.log("Player Scissors / Computer Paper");
         console.log("You Lose!");
+        computerScore += 1;
+        console.log("Computerscore" + computerScore);
+        roundCount += 1;
     }
     // Player Rock / Computer Scissors 
     else if (playerChoice === "rock" && computerChoice === "scissors"){
         console.log("Player Rock / Computer Scissors");
         console.log("You Win!");
+        playerScore += 1;
+        console.log("Playerscore" + playerScore);
+        roundCount += 1;
     }
     // Player Scissors / Computer Rock 
     else if (playerChoice === "scissors" && computerChoice === "rock"){
         console.log("Player Scissors / Computer Rock");
         console.log("You Lose!");
+        computerScore += 1;
+        console.log("Computerscore" + computerScore);
+        roundCount += 1;
     } else {
         console.log("Invalid input, please try again");
     }
 }
-computerPlay();
-playRound();
+
