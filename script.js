@@ -31,6 +31,8 @@ let computerScore = 0;
 function playRound() {
     const computerChoice = computerPlay();
     let playerChoice = prompt("rock, paper, scissors?");
+    playerChoice = playerChoice.toLowerCase();
+
     var roundCount = 0;
     
     if (playerChoice === computerChoice){
