@@ -25,14 +25,24 @@ function computerPlay() {
         console.log("Invalid Computer Choice");
     }
 }
+let playerScore = 0;
+let computerScore = 0;
 
-function playRound() {
+function playRound(playerScore, computerScore) {
     const computerChoice = computerPlay();
     let playerChoice = prompt("rock, paper, scissors?");
-
+    
     var roundCount = 0;
-    var playerScore = 0;
-    var computerScore = 0;
+    // create score variables if not created. 
+    // if (playerScore === undefined) {
+    //     var playerScore = 0;
+    // }
+    
+    // if (computerScore === undefined) {
+    //     var computerScore = 0;
+    //     // return computerScore;
+    // }
+
     // if playerNumber and computer Num is same 
     if (playerChoice === computerChoice){
         console.log("Tie");
@@ -41,7 +51,7 @@ function playRound() {
     else if (playerChoice === "rock" && computerChoice === "scissors"){
         console.log("Player Rock / Computer Paper");
         console.log("You lose!");
-        computerScore += 1;
+        computerScore++;
         console.log("Computerscore" + computerScore);
         roundCount += 1;
     }
@@ -49,7 +59,7 @@ function playRound() {
     else if (playerChoice === "paper" && computerChoice === "rock"){
         console.log("Player Paper / Computer Rock");
         console.log("You Win!");
-        playerScore += 1;
+        playerScore++;
         console.log("Playerscore" + playerScore);
         roundCount += 1;
     }
@@ -57,7 +67,7 @@ function playRound() {
     else if (playerChoice === "paper" && computerChoice === "scissors"){
         console.log("Player Paper / Computer Scissors");
         console.log("You Lose!");
-        computerScore += 1;
+        computerScore++;
         console.log("Computerscore" + computerScore);
         roundCount += 1;
 
@@ -66,7 +76,7 @@ function playRound() {
     else if (playerChoice === "scissors" && computerChoice === "paper"){
         console.log("Player Scissors / Computer Paper");
         console.log("You Lose!");
-        computerScore += 1;
+        computerScore++;
         console.log("Computerscore" + computerScore);
         roundCount += 1;
     }
@@ -74,7 +84,7 @@ function playRound() {
     else if (playerChoice === "rock" && computerChoice === "scissors"){
         console.log("Player Rock / Computer Scissors");
         console.log("You Win!");
-        playerScore += 1;
+        playerScore++;
         console.log("Playerscore" + playerScore);
         roundCount += 1;
     }
@@ -82,7 +92,7 @@ function playRound() {
     else if (playerChoice === "scissors" && computerChoice === "rock"){
         console.log("Player Scissors / Computer Rock");
         console.log("You Lose!");
-        computerScore += 1;
+        computerScore++;
         console.log("Computerscore" + computerScore);
         roundCount += 1;
     } else {
